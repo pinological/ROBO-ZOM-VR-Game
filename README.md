@@ -1,7 +1,16 @@
-# ROBO ZOM is a VR game made to learn about the basics of XR in unity 
-## Clone and open in Unity 
+# ROBO ZOM VR
+## It is a VR game made to learn about the basics of XR in unity. To get started clone and open in Unity 
 
 ![Game Poster](./splash%20screen.png)
+
+
+## Feature of the game.
+- VR.
+- Can interact with game object using grap trigger in VR controller.
+
+## Game Play 
+- Grab stone or sword and start killer enemy 
+- There are 3 phases in-game, with each one the spawn rate increases 
 
 ## Some of the Screen Shot of the game.
 ### Menu 
@@ -13,13 +22,5 @@
 ### Dead 
 ![Game Poster](./Screenshot_2.png)
 
-
-## Feature of the game.
-- VR.
-- Can interact with game object using grap trigger in VR controller.
-
-## Game Play 
-- Grab stone or sword and start killer enemy 
-- There are 3 phases in-game, with each one the spawn rate increases 
 
 
