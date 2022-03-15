@@ -18,6 +18,7 @@ public class enemyContoller : MonoBehaviour
     {
         Vector3 locationPlay = FindObjectOfType<playerInfo>().playerlocation();
         navMeshAgent.destination = locationPlay;
+        Debug.Log(locationPlay);
         
     }
 
@@ -33,6 +34,11 @@ public class enemyContoller : MonoBehaviour
 
             Destroy(gameObject);
 
+        }
+
+        if(other.gameObject.tag == "finish")
+        {
+            Destroy(gameObject);
         }
     }
 }

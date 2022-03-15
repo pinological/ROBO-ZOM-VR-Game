@@ -7,15 +7,14 @@ public class cleaner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(cleanerFun());
+        StartCoroutine(cleanerBody());
     }
 
-    IEnumerator cleanerFun()
+    IEnumerator cleanerBody()
     {
-        
         FindObjectOfType<score>().CountAdder();
         FindObjectOfType<healthCountUpdate>().UpdateKillText();
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(2f);
         Destroy(gameObject);
     }
 }

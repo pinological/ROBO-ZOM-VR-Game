@@ -16,15 +16,11 @@ public class playerInfo : MonoBehaviour
         if(other.gameObject.tag == "zom")
         {
             playerhealth--;
-            if (playerhealth < 0)
+            if (playerhealth < 1)
             {
                 SceneManager.LoadScene(2);
             }
-            
-
             FindObjectOfType<healthCountUpdate>().UpdateHealthText();
-            
-            
         }
     }
 

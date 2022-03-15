@@ -6,6 +6,8 @@ public class enemyspanner : MonoBehaviour
 {
     public Transform prefab;
     public GameObject player;
+
+
     void Start()
     {
         StartCoroutine(spanner());
@@ -13,12 +15,35 @@ public class enemyspanner : MonoBehaviour
 
     IEnumerator spanner() {
 
+        if(FindObjectOfType<score>().getScore() < 10) { 
+
         if (GameObject.FindGameObjectsWithTag("zom").Length < 2)
         {
-            Debug.Log("i am working");
-            Instantiate(prefab, new Vector3(Random.Range(player.transform.position.x + 9, player.transform.position.x - 9), 0, Random.Range(player.transform.position.z + 9, player.transform.position.z - 9)), Quaternion.identity);
+            Instantiate(prefab, new Vector3(Random.Range(player.transform.position.x + 10, player.transform.position.x - 10), 1f, Random.Range(player.transform.position.z + 10, player.transform.position.z - 10)), Quaternion.identity);
         }
-        yield return new WaitForSeconds(1f);
+            FindObjectOfType<score>().phaseUpdate("warm up");
+        }
+       else if (FindObjectOfType<score>().getScore() >= 10 && FindObjectOfType<score>().getScore() < 40)
+        {
+
+            if (GameObject.FindGameObjectsWithTag("zom").Length < 4)
+            {
+                Instantiate(prefab, new Vector3(Random.Range(player.transform.position.x + 10, player.transform.position.x - 10), 1f, Random.Range(player.transform.position.z + 10, player.transform.position.z - 10)), Quaternion.identity);
+            }
+            FindObjectOfType<score>().phaseUpdate("Heated");
+        }
+
+        else
+        {
+            if (GameObject.FindGameObjectsWithTag("zom").Length < 6)
+            {
+                Instantiate(prefab, new Vector3(Random.Range(player.transform.position.x + 10, player.transform.position.x - 10), 1f, Random.Range(player.transform.position.z + 10, player.transform.position.z - 10)), Quaternion.identity);
+            }
+            FindObjectOfType<score>().phaseUpdate("Zom Mode");
+        }
+
+
+        yield return new WaitForSeconds(3f);
         
         StartCoroutine(spanner());
 

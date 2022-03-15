@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class score : MonoBehaviour
 {
-    public Text scoreCount;
+    public Text scoreCount, phase;
     public int num = 0;
 
     private void Start()
@@ -19,6 +19,7 @@ public class score : MonoBehaviour
         Debug.Log(scoreCount.text);
         num++;
         scoreCount.text = "Score : " + num;
+        PlayerPrefs.SetInt("score", num);
 
     }
 
@@ -27,5 +28,9 @@ public class score : MonoBehaviour
         return num;
     }
 
+    public void phaseUpdate(string phaseStr)
+    {
+        phase.text = "Phase : "+phaseStr;
+    }
 
 }
